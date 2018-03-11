@@ -1,0 +1,12 @@
+<table class="table">
+	<tr>
+		<th class="head" *ng-for="#column of columnKeys; #colNum = index" [attr.id]="'header_'+colNum" [class.sort]="colNum == sortIndex" [class.asc]="colNum == sortIndex && sortAsc" [class.desc]="colNum == sortIndex && !sortAsc" (click)="sortClick(colNum)" style="cursor: pointer">
+			{{underscoreToCamel(columnSet[column])}} <div class="sortHandle fa fa-chevron-down"></div>
+		</th>
+	</tr>
+	<tr *ng-for="#dataRow of viewData; #rowNum = index" [attr.id]="'dataRow_'+rowNum">
+		<td class="col" *ng-for="#column of columnKeys; #colNum = index" [attr.id]="'data_'+rowNum+'_'+colNum">
+			{{dataRow[column]}}
+		</td>
+	</tr>
+</table>

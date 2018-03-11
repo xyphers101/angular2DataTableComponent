@@ -1,0 +1,18 @@
+th {
+	position: relative;
+}
+
+.sortHandle {
+	display: none;
+	position: absolute;
+	top: 10px;
+	right: 5px;
+}
+
+th:hover .sortHandle, th.sort .sortHandle {
+	display: block;
+}
+
+th.sort.asc:hover .sortHandle:before, th.sort.desc:not(:hover) .sortHandle:before {
+	content: '\f077';
+}
